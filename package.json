@@ -1,0 +1,27 @@
+{
+  "name": "contract-testing-pactjs",
+  "version": "1.0.0",
+  "description": "Sample project showing contract testing flow through Node.js applications",
+  "scripts": {
+    "test:consumer": "jest --runInBand __tests__/contract/consumer.spec.js",
+    "publish:pactflow": "export $(cat .env | xargs) && pact-broker publish ./pacts --consumer-app-version=$PACT_VERSION --broker-base-url=$PACTFLOW_URI --broker-token=$PACTFLOW_TOKEN",
+    "publish:broker": "node ./__tests__/contract/broker/publish.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "Eduardo Pacheco Celeste",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "@pact-foundation/pact": "^9.9.2",
+    "@pact-foundation/pact-node": "^10.9.2",
+    "babel-jest": "^25.4.0",
+    "jest": "^25.4.0"
+  }
+}

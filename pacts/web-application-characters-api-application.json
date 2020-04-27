@@ -1,0 +1,72 @@
+{
+  "consumer": {
+    "name": "web-application"
+  },
+  "provider": {
+    "name": "characters-api-application"
+  },
+  "interactions": [
+    {
+      "description": "a request to list all characters",
+      "request": {
+        "method": "GET",
+        "path": "/characters"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "id": 1,
+            "name": "Walter White",
+            "age": 58
+          },
+          {
+            "id": 1,
+            "name": "Walter White",
+            "age": 58
+          },
+          {
+            "id": 1,
+            "name": "Walter White",
+            "age": 58
+          },
+          {
+            "id": 1,
+            "name": "Walter White",
+            "age": 58
+          },
+          {
+            "id": 1,
+            "name": "Walter White",
+            "age": 58
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 5
+          },
+          "$.body[*].*": {
+            "match": "type"
+          },
+          "$.body[*].id": {
+            "match": "type"
+          },
+          "$.body[*].name": {
+            "match": "type"
+          },
+          "$.body[*].age": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
