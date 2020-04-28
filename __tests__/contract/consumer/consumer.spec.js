@@ -1,8 +1,8 @@
 import { Pact } from '@pact-foundation/pact';
 
-import { fetchCharacters } from '../../src/service/api';
-import charactersInteraction from './interactions/characters.interaction';
-import provider from './settings/provider.mock';
+import { fetchCharacters } from '../../../src/service/api';
+import charactersInteraction from '../interactions/characters.interaction';
+import provider from '../settings/provider.mock';
 
 const mockProvider = new Pact(provider);
 

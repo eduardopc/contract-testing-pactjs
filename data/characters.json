@@ -1,0 +1,29 @@
+{
+  "characters": [
+   {
+      "id": 1,
+      "name": "Walter White",
+      "age": 58
+   },
+   {
+      "id": 2,
+      "name": "Michael Scofield",
+      "age": 50
+   },
+   {
+      "id": 3,
+      "name": "Gregory House",
+      "age": 65
+   },
+   {
+      "id": 4,
+      "name": "Michael Scott",
+      "age": 48
+   },
+   {
+      "id": 5,
+      "name": "Tyrion Lannister",
+      "age": 42
+   }
+  ]
+}

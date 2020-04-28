@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Sample project showing contract testing flow through Node.js applications",
   "scripts": {
-    "test:consumer": "jest --runInBand __tests__/contract/consumer.spec.js",
+    "test:consumer": "jest --runInBand __tests__/contract/consumer/consumer.spec.js",
+    "test:provider-broker": "jest --runInBand __tests__/contract/provider/provider.spec.js --testTimeout=10000 opt=broker",
+    "test:provider-pactflow": "jest --runInBand __tests__/contract/provider/provider.spec.js --testTimeout=20000 opt=pactflow",
     "publish:pactflow": "export $(cat .env | xargs) && pact-broker publish ./pacts --consumer-app-version=$PACT_VERSION --broker-base-url=$PACTFLOW_URI --broker-token=$PACTFLOW_TOKEN",
-    "publish:broker": "node ./__tests__/contract/broker/publish.js"
+    "publish:broker": "node ./__tests__/contract/broker/publish.js",
+    "up:mock-service": "export $(cat .env | xargs) && json-server ./data/characters.json -p $SERVER_PORT -w"
   },
   "jest": {
     "testEnvironment": "node"

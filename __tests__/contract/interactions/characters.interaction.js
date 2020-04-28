@@ -1,4 +1,4 @@
-import { eachLike, like, integer } from '@pact-foundation/pact/dsl/matchers';
+import { eachLike, somethingLike, integer } from '@pact-foundation/pact/dsl/matchers';
 
 module.exports = {
   uponReceiving: 'a request to list all characters',
@@ -14,7 +14,7 @@ module.exports = {
     body: eachLike (
       {
         id: integer(1),
-        name: like('Walter White'),
+        name: somethingLike('Walter White'),
         age: integer(58)
       },
       { min: 5 }
