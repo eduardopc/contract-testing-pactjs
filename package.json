@@ -8,7 +8,7 @@
     "test:provider-pactflow": "jest --runInBand __tests__/contract/provider/provider.spec.js --testTimeout=20000 opt=pactflow",
     "publish:pactflow": "export $(cat .env | xargs) && pact-broker publish ./pacts --consumer-app-version=$PACT_VERSION --broker-base-url=$PACTFLOW_URI --broker-token=$PACTFLOW_TOKEN",
     "publish:broker": "node ./__tests__/contract/broker/publish.js",
-    "up:mock-service": "export $(cat .env | xargs) && json-server ./data/characters.json -p $SERVER_PORT -w"
+    "up:mock-service": "export $(cat .env | xargs) && ./node_modules/.bin/json-server ./data/characters.json -p $SERVER_PORT -w"
   },
   "jest": {
     "testEnvironment": "node"
@@ -25,6 +25,7 @@
     "@pact-foundation/pact": "^9.9.2",
     "@pact-foundation/pact-node": "^10.9.2",
     "babel-jest": "^25.4.0",
-    "jest": "^25.4.0"
+    "jest": "^25.4.0",
+    "json-server": "^0.16.1"
   }
 }
