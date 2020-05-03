@@ -20,7 +20,7 @@
 
 ### 4. O arquivo gerado pode ser enviado para o Pact Broker de duas formas:
 
-* (ALTERAR URL) Via Docker (Necessário ter o Docker configurado, seguir os passos descritos neste artigo pra executar dessa forma: https://medium.com/beyondtest/pact-broker-via-docker-images-7d6bf66dd5ea)
+* Via Docker (Necessário ter o Docker configurado, seguir os passos descritos neste artigo pra executar dessa forma: https://medium.com/beyondtest/pact-broker-via-docker-images-7d6bf66dd5ea)
 
 * Via Pactflow
 

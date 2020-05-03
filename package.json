@@ -11,7 +11,10 @@
     "up:mock-service": "export $(cat .env | xargs) && ./node_modules/.bin/json-server ./data/characters.json -p $SERVER_PORT -w"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "transform": {
+      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
+    }
   },
   "keywords": [],
   "author": "Eduardo Pacheco Celeste",
@@ -21,11 +24,10 @@
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.9.5",
-    "@pact-foundation/pact": "^9.9.2",
-    "@pact-foundation/pact-node": "^10.9.2",
-    "babel-jest": "^25.4.0",
-    "jest": "^25.4.0",
+    "@pact-foundation/pact": "^9.10.0",
+    "@pact-foundation/pact-node": "^10.9.3",
+    "@sucrase/jest-plugin": "^2.0.0",
+    "jest": "^25.5.4",
     "json-server": "^0.16.1"
   }
 }
